@@ -1,0 +1,51 @@
+def find_string(the_list, find_val):
+list_len = len(the_list) #get the list size
+found = False
+i = 0
+idx = -1 #where in the array was found; -1 = not found
+#search the array for the value
+while i < list_len and idx < 0: #equivelant to found == false
+if find_val.upper() == the_list[i].upper():
+idx = i
+found = True
+#end if
+i += 1
+#end while
+return idx
+
+
+def find_int(the_list, find_val):
+list_len = len(the_list) #get the list size
+i = 0
+idx = -1 #where is the array the value was found; -1 = not found
+#search the array for the value
+while i < list_len and idx < 0: #equivalent to found == false
+if find_val == the_list[i]:
+idx = i
+#end if
+i += 1
+#end while
+  
+return idx
+#end find_int
+
+def get_int_val (prompt):
+is_num = False
+str_val = input (prompt) #prming read for our while
+#while is_num == False: (ignore this but it works) old school
+while not is_num:
+try:
+value = int(str_val)#changed here converting to int instaead of float
+is_num = True
+except:
+print (str_val + " is Not an int " )
+str_val = input ( prompt )
+
+return value
+
+def is_int (value):
+try:
+num = int(value)#changed here converting to int instaead of float
+return True # if we make it here, then the conversio was successful
+except:
+return False
